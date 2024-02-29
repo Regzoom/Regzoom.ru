@@ -1,0 +1,165 @@
+@import '../../assets/scss/util/mixins.scss';
+
+.info {
+    
+    @include flex(row, center, var(--hk-spacing-3));
+
+    .image {
+        position: relative; // Добавляем относительное позиционирование
+
+        user-select: none;
+        overflow: hidden;
+        @include circle(var(--hk-spacing-2));
+        @include flex(row, center, var(--hk-spacing-0), center);
+        
+        img {
+            @include box(76px);
+        }
+    }
+
+    .content {
+        max-width: 80%;
+        @include flex(column);
+
+        .title {
+            @include text(24, 700, var(--hk-color-primary));
+            @include text-hidden();
+        }
+
+        .description {
+            cursor: pointer;
+            @include text(14, 400, var(--hk-color-complementary));
+            @include text-hidden();
+        }
+    }
+
+    .activity_content {
+        max-width: 80%;
+        @include flex(column);
+
+        .title {
+            @include text(24, 700, var(--hk-color-primary));
+            @include text-hidden();
+        }
+
+        .description {
+            cursor: pointer;
+            @include text(14, 400, var(--hk-color-complementary));
+            @include text-hidden();
+        }
+    }
+
+    .activity_image {
+        position: relative; // Добавляем относительное позиционирование
+        
+        max-width: 80%;
+        @include flex(column);
+
+        user-select: none;
+        overflow: hidden;
+        @include circle(var(--hk-spacing-2));
+        @include flex(row, center, var(--hk-spacing-0), center);
+        margin-top: 50px;
+
+        .large_image {
+            border-radius: 20%;
+            @include box(76px);
+        
+        }
+
+        .small_image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-top: 10px;
+            border-radius: 100%;
+            border:solid black 2px;
+            background-color: #7c808b;
+            @include box(30px);
+        }
+
+    }
+    .activity_text {
+        width: auto + 100px;
+
+        .playing_to {
+            height: 24px;
+        }
+        
+        .title {
+            margin-top: 50px;
+    
+            @include text(24, 700, var(--hk-color-primary));
+            @include text-hidden();
+        }
+    
+        .state {
+            @include text(14, 1500, var(--hk-color-complementary));
+            font-family: 'Space Mono', 'Mulish';
+            font-size: toRem(14);
+            // font-weight: 1500;
+            color: var(--hk-color-complementary);
+            line-height: normal;
+            // user-select: none;
+            // @include text-hidden();
+        }
+    
+        .detalis {
+            @include text(14, 700, var(--hk-color-complementary));
+            @include text-hidden();
+        }
+    }
+}
+
+.activity_block {
+    @include flex(row, center, var(--hk-spacing-3));
+    @include text(24, 700, var(--hk-color-primary));
+    @include text-hidden(); 
+}
+
+.online {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #23a55a;
+}
+
+.dnd {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #f23f43;
+}
+
+.idle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #f0b232;
+}
+
+.offline {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #7c808b;
+}
+
+
+@media screen and (max-width: 696px) {
+    .info .content {
+        max-width: 65%;
+    }
+}
