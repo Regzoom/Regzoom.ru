@@ -1,4 +1,4 @@
-export const id = '' // Discord id
+export const id = '678203623708033024' // Discord id
 
 export const github = 'https://github.com/Regzoom' // Your github url
 
